@@ -119,7 +119,35 @@ let ticketPriceTotal = runners.reduce(function(totalRaised, currentValue) {
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+// 2XL & 3XL tees require using a different t-shirt supplier. Create an array of runners who need the larger shirts.
+
+let bigTees = runners.filter((currentValue) => {
+    return currentValue.shirt_size === "2XL" || currentValue.shirt_size === "3XL" ;
+                                                               
+});
+
+console.log(bigTees);
 
 // Problem 2
+//Find the big time donors to suck up to
+
+let bigDonors = runners.filter((currentValue) => {
+    return currentValue.donation > 275;
+                                                               
+});
+
+console.log(bigDonors);
+
 
 // Problem 3
+//Find runners with school email addresses
+
+let schoolRunners = runners.map((currentValue) => {
+    if (currentValue.email.includes(".edu")) {
+      return (`${currentValue.first_name} ${currentValue.last_name} ${currentValue.email}`);    
+    }
+    
+  });
+  
+  console.log(schoolRunners);
+  
